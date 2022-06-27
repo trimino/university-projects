@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>More HTML</title>
+    </head>
+    <body>
+    <p>
+        package com.company;</br>
+        import javax.net.ssl.SSLSession;</br>
+        import java.io.*;</br>
+        import java.net.*;</br>
+        import java.net.http.HttpClient;</br>
+        import java.net.http.HttpHeaders;</br>
+        import java.net.http.HttpRequest;</br>
+        import java.time.Duration;</br>
+        import java.util.*;</br>
+
+
+        public class Server {</br>
+            public static void main(String[] args) {</br>
+
+                int PORT = 8080;
+                ServerSocket serverSocket = null;
+                try {
+                    serverSocket = new ServerSocket(PORT);
+                    serverSocket.setReuseAddress(true);
+
+                    while (true){
+                        Socket clientSocket = serverSocket.accept();
+
+                        HTTPRequest httpRequest = new HTTPRequest(clientSocket);
+
+                        new Thread(httpRequest).start();
+                    }
+                }catch (IOException e){
+                    e.printStackTrace();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }finally {
+                    try {
+                        if (serverSocket != null) {
+                            serverSocket.close();
+                        }
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    </p>
+    </body>
+</html>

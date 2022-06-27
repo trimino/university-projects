@@ -1,0 +1,88 @@
+QUESTION 1: Which value of slices did you select for your machine to solve the polynomial with 1 thread with at least a 30 second runtime: 
+    # of Slices: 200, 000, 000
+
+QUESTION 2: Provide the output of ``time polyb nn`` (or the improved version in the lecture video, if you prefer) for the following values of nn threads shown below:
+
+Example Timing:
+
+real	0m22.551s
+user	0m22.524s
+sys	0m0.012s
+
+
+YOUR Timing:
+
+Without threads:
+26.980sec real
+26.57sec user 
+0.04sec system 
+98% cpu 
+
+
+With 2 threads:
+15.338sec real
+29.38sec user 
+0.02sec system 
+191% cpu 
+
+
+With 4 threads:
+14.764sec real
+38.28sec user 
+0.17sec system 
+260% cpu 
+
+
+
+With 6 threads:
+15.261sec real
+37.44sec user 
+0.34sec system 
+247% cpu 
+
+
+
+With 8 threads:
+17.440sec real
+43.66sec user 
+0.16sec system 
+251% cpu 
+
+
+
+With 12 threads:
+17.634sec real
+42.51s user 
+0.22s system 
+242% cpu 
+
+
+
+With 24 threads:
+16.891sec real
+43.08s user 
+0.23s system 
+256% cpu 
+
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
+
+    Yes and no. If there are to many threads will be alot of context switching which will slow done the applications.
+    Adding more threads can speed up the program.
+    But there is a threshold and unpredicatble behavior with it. 
+    This threshold depends on the hardware you are using such as cpu, memory bound, and I/O bound
+
+
+
+
+QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
+    
+    I believe it increases the system load because each thread can utilize the finite OS resources in the computer.
+    Having mutilple CPUs is like having multiple computers so if you cpu is over a 100% it means you are utilizing more than one 
+    core. With this the data above is unpredicatble. Like when the using 8 threads cpu is at 251%, but whenusing 24 threads
+    is uses 256%. 
+
+
+
+
+
